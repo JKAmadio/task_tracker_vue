@@ -1,6 +1,6 @@
 <template>
 	<div class="flex w-full justify-between">
-		<h1 class="font-sans font-semibold text-2xl w-44">Task Tracker</h1>
+		<h1 class="font-sans font-semibold text-2xl w-44">{{title}}</h1>
 		<Button 
 			text="Add task"
 			@refreshList="this.$emit('refreshList')"
@@ -17,5 +17,8 @@ export default {
 	components: {
 		Button,
 	},
+	props: {
+		title: {type: String, require:true}
+	}
 }
 </script>

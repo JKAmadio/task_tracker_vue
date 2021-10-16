@@ -1,6 +1,7 @@
 <template>
   <div class="w-3/4 mx-auto my-6 p-6 border border-solid border-black bg-gray-50">
     <Header
+      title="Task Tracker"
       @refreshList="refreshList"
     />
     <Tasks
