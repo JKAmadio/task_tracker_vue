@@ -4,6 +4,9 @@
       title="Task Tracker"
       @refreshList="refreshList"
     />
+    <FormNewTask
+      @saveTask="saveTask"
+    />
     <Tasks
       :tasks="tasks"
       @delete-task="deleteTask"
@@ -16,12 +19,14 @@
 
 import Header from './components/Header.vue'
 import Tasks from './components/Tasks.vue'
+import FormNewTask from './components/FormNewTask.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Tasks
+    Tasks,
+    FormNewTask,
   },
   data() {
     return {
@@ -60,6 +65,10 @@ export default {
       this.tasks.map(task => {
         task.id === id ? task.reminder = !task.reminder : task.reminder
       })
+    },
+
+    saveTask(task) {
+      this.tasks = [...this.tasks, task]
     }
   },
   created() {

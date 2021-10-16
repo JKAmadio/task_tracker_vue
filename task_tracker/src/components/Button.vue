@@ -1,6 +1,7 @@
 <template>
 	<button 
-		class="px-6 py-2 rounded-full bg-green-600 text-white"
+		class="px-6 py-2 rounded-full"
+		:style="{background: bgColor, color: txtColor}"
 		@click="this.$emit('refreshList')"
 	>
 		{{text}}
@@ -11,7 +12,9 @@
 export default {
 	name:'Button',
 	props: {
-		text: {type: String, require:false, default: 'Click me'}
+		text: {type: String, required:false, default: 'Click me'},
+		bgColor: {type: String, required:false, default: 'black'},
+		txtColor: {type: String, required:false, default: 'white'},
 	}
 }
 </script>
