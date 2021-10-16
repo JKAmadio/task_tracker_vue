@@ -4,6 +4,7 @@
 			<Task 
 				:task="task"
 				@deleteTask="$emit('deleteTask', task.id)"
+				@toggleReminder="$emit('toggleReminder', task.id)"
 			/>
 		</div>
 	</div>
@@ -20,6 +21,6 @@ export default {
 	},
 	props: {
 		tasks: {type: Array, required:true}
-	}
+	},
 }
 </script>

@@ -2,6 +2,7 @@
 	<div 
 		class="flex justify-between items-start bg-gray-100 py-4 px-6 mb-3 shadow-md"
 		:class="task.reminder ? 'border-l-8 border-green-600' : 'border-0'"
+		@dblclick="this.$emit('toggleReminder', task.id)"
 	>
 		<div>
 			<h3 class="text-lg">
