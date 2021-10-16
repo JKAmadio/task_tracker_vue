@@ -3,7 +3,7 @@
 		<h1 class="font-sans font-semibold text-2xl w-44">{{title}}</h1>
 		<Button 
 			text="Add task"
-			@refreshList="this.$emit('refreshList')"
+			@click="this.$emit('toggleForm')"
 		/>
 	</div>
 </template>
