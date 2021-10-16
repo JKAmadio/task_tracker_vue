@@ -1,7 +1,10 @@
 <template>
   <div class="w-3/4 mx-auto my-6 p-6 border border-solid border-black bg-gray-50">
     <Header/>
-    <Tasks :tasks="tasks"/>
+    <Tasks
+      :tasks="tasks"
+      @delete-task="deleteTask"
+    />
   </div>
 </template>
 
@@ -19,6 +22,11 @@ export default {
   data() {
     return {
       tasks: []
+    }
+  },
+  methods: {
+    deleteTask(id){
+      this.tasks = this.tasks.filter(task => task.id !== id )
     }
   },
   created() {
